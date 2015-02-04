@@ -453,7 +453,8 @@
 			var onClose = this._get(inst, 'onClose');
 			inst.settings.effect === "fade" ? $("#sbOptions_" + inst.uid).fadeOut(inst.settings.speed) : $("#sbOptions_" + inst.uid).slideUp(inst.settings.speed);
 			$("#sbToggle_" + inst.uid).removeClass(inst.settings.classToggleOpen);
-			$("#sbSelector_" + inst.uid).text(inst.input.val());
+			var selected = inst.input.find(':selected')
+			$("#sbSelector_" + inst.uid).text(selected.text());
 			this._state[inst.uid] = FALSE;
 			inst.isOpen = FALSE;
 			if (onClose) {
